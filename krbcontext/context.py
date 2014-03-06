@@ -180,6 +180,8 @@ def init_ccache_if_necessary(context, kwargs):
     principal = kwargs['principal']
     old_ccache = None
     init_required = is_initialize_ccache_necessary(context, ccache, principal)
+    # TODO: refine the is_initialize_ccache_necessary
+    init_required = True
     if init_required:
         old_ccache = os.getenv(ENV_KRB5CCNAME)
         if kwargs['using_keytab']:
